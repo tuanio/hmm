@@ -2,6 +2,7 @@ import numpy as np
 from hmmlearn import hmm
 from data import *
 
+
 def viterbi(O):
     O -= 1
     T = len(O)
@@ -24,10 +25,11 @@ def viterbi(O):
         Q[t] = psi[t + 1, Q[-1]]
     return P, Q
 
+
 # observation
 O = np.array([1, 2, 1, 1, 2, 2, 2, 2, 3])
 
-# 
+#
 P, best_state = viterbi(O)
 print(P, best_state)
 

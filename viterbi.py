@@ -1,10 +1,8 @@
 import numpy as np
-from hmmlearn import hmm
+import copy
 from data import *
 
-
 def viterbi(O):
-    O -= 1
     T = len(O)
     delta = np.zeros(shape=(T, N))
     psi = np.zeros_like(delta, dtype='int')
@@ -25,18 +23,8 @@ def viterbi(O):
         Q[t] = psi[t + 1, Q[-1]]
     return P, Q
 
-
-# observation
-O = np.array([1, 2, 1, 1, 2, 2, 2, 2, 3])
-
+O = copy.deepcopy(observation) - 1
 #
 P, best_state = viterbi(O)
 print(P, best_state)
 
-# test using hmmlearn library
-model_hmm = hmm.MultinomialHMM(n_components=2)
-model_hmm.startprob_ = PI
-model_hmm.transmat_ = A
-model_hmm.emissionprob_ = B
-llh, decoded = model_hmm.decode(O.reshape(-1, 1))
-print(np.exp(llh), decoded)

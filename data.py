@@ -1,7 +1,7 @@
 import numpy as np
 
 S = ['H', 'C']
-V = [1, 2, 3]
+V = np.array([1, 2, 3])
 
 N = len(S)
 M = len(V)
@@ -13,3 +13,6 @@ A = np.array([[0.6, 0.4],
 
 B = np.array([[0.2, 0.4, 0.4],
               [0.5, 0.4, 0.1]])
+
+# observation
+observation = np.array([1, 2, 1, 1, 2, 2, 2, 2, 3])

@@ -1,18 +1,18 @@
 import numpy as np
 
-S = ['H', 'C']
+Q = ['H', 'Đ']
 V = np.array([1, 2, 3])
 
-N = len(S)
+N = len(Q)
 M = len(V)
 
-PI = np.array([0.8, 0.2])
+PI = np.array([0.65, 0.35])
 
-A = np.array([[0.6, 0.4],
-              [0.5, 0.5]])
+A = np.array([[0.65, 0.35],
+              [0.65, 0.35]])
 
-B = np.array([[0.2, 0.4, 0.4],
-              [0.5, 0.4, 0.1]])
+B = np.array([[0.2, 0.35, 0.45],
+              [0.75, 0.15, 0.1]])
 
 # observation
 observation = np.array([1, 2, 1, 1, 2, 2, 2, 2, 3])
